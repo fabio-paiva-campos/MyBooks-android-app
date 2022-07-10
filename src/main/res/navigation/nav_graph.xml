@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/BookListFragment">
+
+    <fragment
+        android:id="@+id/BookListFragment"
+        android:name="com.example.books.BookListFragment"
+        android:label="BookList Fragment"
+        tools:layout="@layout/fragment_booklist">
+
+        <action
+            android:id="@+id/action_BookList_to_BookFragment"
+            app:destination="@id/BookFragment" />
+        <action
+            android:id="@+id/action_BookListFragment_to_ApiListFragment"
+            app:destination="@id/ApiListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/BookFragment"
+        android:name="com.example.books.BookFragment"
+        android:label="Book Fragment"
+        tools:layout="@layout/fragment_book">
+
+        <action
+            android:id="@+id/action_BookFragment_to_BookListFragment"
+            app:destination="@id/BookListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ApiListFragment"
+        android:name="com.example.books.ApiListFragment"
+        android:label="ApiList Fragment"
+        tools:layout="@layout/fragment_apilist">
+
+        <action
+            android:id="@+id/action_ApiListFragment_to_ApiBookFragment"
+            app:destination="@id/ApiBookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ApiBookFragment"
+        android:name="com.example.books.ApiBookFragment"
+        android:label="ApiBook Fragment"
+        tools:layout="@layout/fragment_apibook">
+
+        <action
+            android:id="@+id/action_ApiBookFragment_to_ApiListFragment2"
+            app:destination="@id/ApiListFragment" />
+    </fragment>
+</navigation>
